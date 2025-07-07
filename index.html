@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polimix - Concreto Usinado, Bombeamento e Locação | São Paulo</title>
+    <meta name="description" content="Polimix - Líder em concreto usinado, bombeamento de concreto e locação de equipamentos em São Paulo. Qualidade garantida há mais de 20 anos.">
+    <meta name="keywords" content="concreto usinado, bombeamento concreto, locação equipamentos, construção civil, São Paulo">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #FF6B35;
+            --primary-dark: #2C3E50;
+            --secondary-gray: #95A5A6;
+            --success-green: #25D366;
+            --warning-red: #E74C3C;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow-light: 0 5px 15px rgba(0,0,0,0.08);
+            --shadow-medium: 0 10px 30px rgba(0,0,0,0.12);
+            --shadow-heavy: 0 20px 40px rgba(0,0,0,0.15);
+            --gradient-primary: linear-gradient(135deg, #FF6B35, #FF8A65);
+            --gradient-dark: linear-gradient(135deg, #2C3E50, #34495E);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+        }
+
+        .header-top {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .header-contact span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-contact i {
+            color: var(--primary-orange);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            display: none;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo img:not([src]), .logo img[src=""] {
+            display: none;
+        }
+
+        .logo img:not([src]) + .logo-text, 
+        .logo img[src=""] + .logo-text {
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: var(--gradient-primary);
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .header-whatsapp {
+            background: var(--success-green);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .header-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(255, 107, 53, 0.9)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 120px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8), rgba(255, 107, 53, 0.8));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.3s both;
+            opacity: 0.95;
+        }
+
+        .hero-content .description {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.6s both;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .btn {
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--success-green);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* Trust Indicators */
+        .trust-section {
+            background: var(--white);
+            padding: 80px 0;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            z-index: 10;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            padding: 2rem 1rem;
+            transition: transform 0.3s;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .trust-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+            box-shadow: var(--shadow-light);
+        }
+
+        .trust-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-item p {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-orange);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.7rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .service-features li i {
+            color: var(--success-green);
+            font-size: 1rem;
+            width: 16px;
+        }
+
+        .service-cta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .service-btn {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .service-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 100px 0;
+            background: var(--gradient-dark);
+            color: var(--white);
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+
+        .quote-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-info h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .quote-info p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .quote-benefits {
+            list-style: none;
+        }
+
+        .quote-benefits li {
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .quote-benefits li i {
+            color: var(--primary-orange);
+            font-size: 1.3rem;
+            width: 20px;
+        }
+
+        .quote-form {
+            background: rgba(255,255,255,0.1);
+            padding: 3rem;
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .quote-form h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.95);
+            color: var(--text-dark);
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--bg-light);
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-orange);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-orange);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            color: var(--primary-orange);
+            font-size: 1.3rem;
+            width: 20px;
+            margin-top: 0.2rem;
+        }
+
+        .contact-item strong {
+            color: var(--white);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-orange);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo img:not([src]), .footer-logo img[src=""] {
+            display: none;
+        }
+
+        .footer-logo img {
+            height: 45px;
+            margin-right: 15px;
+        }
+
+        .footer-logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--success-green);
+            color: var(--white);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 85px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 8px solid transparent;
+            border-left-color: var(--text-dark);
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 550px;
+            position: relative;
+            box-shadow: var(--shadow-heavy);
+            animation: modalSlideIn 0.4s ease;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .modal-header i {
+            font-size: 4.5rem;
+            color: var(--warning-red);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            color: var(--text-dark);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            color: var(--text-light);
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--bg-light);
+        }
+
+        .close:hover {
+            color: var(--warning-red);
+            background: #fee;
+        }
+
+        .alert-content {
+            background: linear-gradient(135deg, #fff5f5, #fef2f2);
+            border: 2px solid #fecaca;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .alert-content h3 {
+            color: var(--warning-red);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .alert-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .alert-list li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        .alert-list li i {
+            color: var(--success-green);
+            margin-top: 0.2rem;
+            font-size: 1.1rem;
+        }
+
+        .alert-warning {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border: 2px solid #ffcc02;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .alert-warning p {
+            color: #e65100;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .quote-container,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                display: none;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 80px;
+                height: 90vh;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.4rem;
+            }
+
+            .hero-content .description {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 2rem;
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .quote-info h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-text h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Gallery Section */
+        
+    </style>
+</head>
+<body>
+    <!-- Anti-Fraud Modal -->
+    <div id="antifraudModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-shield-alt"></i>
+                <h2>⚠️ Atenção: Proteja-se contra Golpes!</h2>
+            </div>
+            <div class="alert-content">
+                <h3><i class="fas fa-exclamation-triangle"></i> Como identificar a Polimix OFICIAL:</h3>
+                <ul class="alert-list">
+                    <li><i class="fas fa-check"></i> <strong>WhatsApp oficial:</strong> (11) 94685-3666</li>
+                    <li><i class="fas fa-check"></i> <strong>CNPJ:</strong> 08.807.163/0001-12</li>
+                    <li><i class="fas fa-check"></i> Sempre fazemos visita técnica antes do orçamento</li>
+                    <li><i class="fas fa-check"></i> Nunca pedimos pagamento antecipado total</li>
+                    <li><i class="fas fa-check"></i> Emitimos nota fiscal para todos os serviços</li>
+                    <li><i class="fas fa-check"></i> Temos sede física e equipe técnica qualificada</li>
+                </ul>
+                <div class="alert-warning">
+                    <p><i class="fas fa-exclamation-circle"></i> DESCONFIE de ofertas muito abaixo do mercado e de empresas que pedem pagamento total antecipado!</p>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="closeModal()" style="width: 100%; justify-content: center;">
+                <i class="fas fa-thumbs-up"></i>
+                Entendi, continuar navegando com segurança
+            </button>
+        </div>
+    </div>
+
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-content">
+                <div class="header-contact">
+                    <span><i class="fas fa-phone"></i> (11) 94685-3666</span>
+                    <span><i class="fas fa-envelope"></i> contato@polimix.com.br</span>
+                    <span><i class="fas fa-clock"></i> Seg-Sex: 7h às 17h | Sáb: 7h às 12h</span>
+                </div>
+                <div>
+                    <span><i class="fas fa-shield-alt"></i> CNPJ: 08.807.163/0001-12</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="assets/logo-polimix.png" alt="Polimix - Concreto Usinado" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text">POLIMIX</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#quote">Orçamento</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="https://wa.me/5511946853666?text=Olá! Vim pelo site da Polimix e gostaria de mais informações sobre concreto usinado." class="header-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                Fale Conosco
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i> Desde 2003 construindo com qualidade
+                </div>
+                <h1>Polimix Concreto</h1>
+                <p class="subtitle">Concreto Usinado de Qualidade Superior</p>
+                <p class="description">Líder em concreto usinado, bombeamento e locação de equipamentos em São Paulo. Atendemos obras residenciais, comerciais e industriais com a máxima qualidade e pontualidade.</p>
+                <div class="cta-buttons">
+                    <a href="#quote" class="btn btn-primary">
+                        <i class="fas fa-calculator"></i>
+                        Solicitar Orçamento
+                    </a>
+                    <a href="https://wa.me/5511946853666?text=Olá! Preciso de concreto usinado para minha obra. Podem me ajudar?" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Direto
+                    </a>
+                    <a href="#services" class="btn btn-outline">
+                        <i class="fas fa-truck-moving"></i>
+                        Nossos Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>21+</h3>
+                    <p>Anos de Experiência</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>10.000+</h3>
+                    <p>m³ Entregues/Mês</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>5.000+</h3>
+                    <p>Obras Atendidas</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>100%</h3>
+                    <p>Qualidade Garantida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Nossos Serviços</div>
+                <h2 class="section-title">Soluções Completas em Concreto</h2>
+                <p class="section-subtitle">Oferecemos concreto usinado de alta qualidade, bombeamento eficiente e locação de equipamentos para todos os tipos de obra</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Concreto Usinado</h3>
+                    </div>
+                    <p>Concreto de alta qualidade produzido em nossa central, com controle rigoroso de qualidade e entrega pontual em toda São Paulo.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Controle de qualidade rigoroso</li>
+                        <li><i class="fas fa-check"></i> Diversos tipos de resistência</li>
+                        <li><i class="fas fa-check"></i> Entrega pontual garantida</li>
+                        <li><i class="fas fa-check"></i> Laudo técnico incluso</li>
+                        <li><i class="fas fa-check"></i> Aditivos especiais disponíveis</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="https://wa.me/5511946853666?text=Olá! Preciso de orçamento para concreto usinado. Podem me ajudar?" class="service-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-truck-moving"></i>
+                        </div>
+                        <h3>Bombeamento</h3>
+                    </div>
+                    <p>Serviço de bombeamento de concreto com equipamentos modernos e operadores experientes para máxima eficiência na sua obra.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Bombas de última geração</li>
+                        <li><i class="fas fa-check"></i> Operadores qualificados</li>
+                        <li><i class="fas fa-check"></i> Alcance até 60 metros</li>
+                        <li><i class="fas fa-check"></i> Agilidade na concretagem</li>
+                        <li><i class="fas fa-check"></i> Redução de mão de obra</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="https://wa.me/5511946853666?text=Olá! Preciso de bombeamento de concreto para minha obra. Qual o valor?" class="service-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Locação de Equipamentos</h3>
+                    </div>
+                    <p>Locação de equipamentos para construção civil com manutenção preventiva e suporte técnico especializado.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Equipamentos revisados</li>
+                        <li><i class="fas fa-check"></i> Manutenção preventiva</li>
+                        <li><i class="fas fa-check"></i> Suporte técnico 24h</li>
+                        <li><i class="fas fa-check"></i> Entrega e retirada</li>
+                        <li><i class="fas fa-check"></i> Preços competitivos</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre locação de equipamentos." class="service-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Controle de Qualidade</h3>
+                    </div>
+                    <p>Laboratório próprio com testes rigorosos para garantir a qualidade e resistência do concreto conforme normas técnicas.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Laboratório próprio</li>
+                        <li><i class="fas fa-check"></i> Testes de resistência</li>
+                        <li><i class="fas fa-check"></i> Laudos técnicos</li>
+                        <li><i class="fas fa-check"></i> Normas ABNT</li>
+                        <li><i class="fas fa-check"></i> Certificação ISO</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="https://wa.me/5511946853666?text=Olá! Gostaria de saber mais sobre o controle de qualidade do concreto." class="service-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Mais Informações
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Consultoria Técnica</h3>
+                    </div>
+                    <p>Equipe técnica especializada para orientar sobre o melhor tipo de concreto para cada aplicação e projeto.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Engenheiros especializados</li>
+                        <li><i class="fas fa-check"></i> Análise de projeto</li>
+                        <li><i class="fas fa-check"></i> Especificação técnica</li>
+                        <li><i class="fas fa-check"></i> Otimização de custos</li>
+                        <li><i class="fas fa-check"></i> Suporte pós-venda</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="https://wa.me/5511946853666?text=Olá! Preciso de consultoria técnica para meu projeto. Podem me ajudar?" class="service-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Falar com Especialista
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Entrega Expressa</h3>
+                    </div>
+                    <p>Serviço de entrega expressa para situações urgentes, garantindo que sua obra não pare por falta de concreto.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Entrega em até 2 horas</li>
+                        <li><i class="fas fa-check"></i> Disponível 24h</li>
+                        <li><i class="fas fa-check"></i> Frota própria</li>
+                        <li><i class="fas fa-check"></i> Rastreamento em tempo real</li>
+                        <li><i class="fas fa-check"></i> Atendimento emergencial</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="https://wa.me/5511946853666?text=Olá! Preciso de concreto com urgência! Vocês fazem entrega expressa?" class="service-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Entrega Urgente
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section id="quote" class="quote-section">
+        <div class="container">
+            <div class="quote-container">
+                <div class="quote-info">
+                    <h2>Solicite seu Orçamento Gratuito</h2>
+                    <p>Preencha o formulário e receba um orçamento personalizado via WhatsApp em até 30 minutos!</p>
+                    <ul class="quote-benefits">
+                        <li><i class="fas fa-check-circle"></i> Orçamento 100% gratuito</li>
+                        <li><i class="fas fa-check-circle"></i> Resposta em até 30 minutos</li>
+                        <li><i class="fas fa-check-circle"></i> Consultoria técnica inclusa</li>
+                        <li><i class="fas fa-check-circle"></i> Melhor preço garantido</li>
+                        <li><i class="fas fa-check-circle"></i> Entrega pontual</li>
+                        <li><i class="fas fa-check-circle"></i> Qualidade certificada</li>
+                    </ul>
+                </div>
+                <div class="quote-form">
+                    <h3>📋 Formulário de Orçamento</h3>
+                    <form id="quoteForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nome Completo *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">WhatsApp *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="document">CNPJ ou CPF</label>
+                                <input type="text" id="document" name="document" placeholder="00.000.000/0000-00 ou 000.000.000-00">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Cidade da Obra *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Tipo de Serviço *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Selecione o serviço</option>
+                                <option value="concreto-usinado">Concreto Usinado</option>
+                                <option value="bombeamento">Bombeamento de Concreto</option>
+                                <option value="concreto-bombeamento">Concreto + Bombeamento</option>
+                                <option value="locacao-equipamentos">Locação de Equipamentos</option>
+                                <option value="consultoria-tecnica">Consultoria Técnica</option>
+                                <option value="entrega-expressa">Entrega Expressa</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="volume">Volume Aproximado (m³)</label>
+                                <input type="number" id="volume" name="volume" placeholder="Ex: 50" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="resistance">Resistência (MPa)</label>
+                                <select id="resistance" name="resistance">
+                                    <option value="">Selecione</option>
+                                    <option value="fck-15">FCK 15 MPa</option>
+                                    <option value="fck-20">FCK 20 MPa</option>
+                                    <option value="fck-25">FCK 25 MPa</option>
+                                    <option value="fck-30">FCK 30 MPa</option>
+                                    <option value="fck-35">FCK 35 MPa</option>
+                                    <option value="fck-40">FCK 40 MPa</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="delivery-date">Data Prevista</label>
+                                <input type="date" id="delivery-date" name="delivery-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="urgency">Urgência</label>
+                                <select id="urgency" name="urgency">
+                                    <option value="">Selecione</option>
+                                    <option value="urgente">Urgente (hoje)</option>
+                                    <option value="1-3-dias">1 a 3 dias</option>
+                                    <option value="1-semana">Até 1 semana</option>
+                                    <option value="flexivel">Flexível</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="project-type">Tipo de Obra</label>
+                            <select id="project-type" name="project-type">
+                                <option value="">Selecione</option>
+                                <option value="residencial">Residencial</option>
+                                <option value="comercial">Comercial</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="infraestrutura">Infraestrutura</option>
+                                <option value="reforma">Reforma</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Detalhes do Projeto *</label>
+                            <textarea id="description" name="description" placeholder="Descreva sua obra: tipo de estrutura, localização, acesso para caminhão, necessidade de bombeamento, etc." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i>
+                            Enviar Orçamento via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre a Polimix</h2>
+                    <p>Desde 2003 no mercado, a Polimix é referência em concreto usinado em São Paulo. Nossa empresa nasceu com o compromisso de fornecer concreto de alta qualidade, pontualidade na entrega e excelência no atendimento.</p>
+                    <p>Contamos com uma central de concreto moderna, laboratório próprio para controle de qualidade, frota de caminhões betoneira e equipamentos de bombeamento de última geração. Nossa equipe técnica é formada por engenheiros e técnicos especializados.</p>
+                    <p>Atendemos obras residenciais, comerciais e industriais em toda a Grande São Paulo, sempre com foco na satisfação do cliente e na qualidade do produto entregue.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">21+</span>
+                            <span class="stat-label">Anos no Mercado</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5.000+</span>
+                            <span class="stat-label">Obras Atendidas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Colaboradores</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Qualidade</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Central de Concreto Polimix">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Units Section -->
+<section class="units-section" style="padding: 100px 0; background: var(--bg-light);">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">Nossas Unidades</div>
+            <h2 class="section-title">Onde Estamos</h2>
+            <p class="section-subtitle">Unidades estrategicamente localizadas para melhor atender toda a Grande São Paulo</p>
+        </div>
+        <div class="units-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="unit-card" style="background: var(--white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light); text-align: center;">
+                <div class="unit-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--white); font-size: 1.5rem;">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Unidade São Paulo</h3>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">Central principal com laboratório e frota completa</p>
+                <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade São Paulo." style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">
+                    <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                </a>
+            </div>
+            <div class="unit-card" style="background: var(--white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light); text-align: center;">
+                <div class="unit-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--white); font-size: 1.5rem;">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Unidade Guarulhos</h3>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">Atendimento especializado para região norte</p>
+                <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade Guarulhos." style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">
+                    <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                </a>
+            </div>
+            <div class="unit-card" style="background: var(--white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light); text-align: center;">
+                <div class="unit-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--white); font-size: 1.5rem;">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Unidade ABC</h3>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">Cobertura completa do ABC Paulista</p>
+                <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade ABC." style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">
+                    <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/logo-polimix.png" alt="Polimix" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span>Polimix</span>
+                    </div>
+                    <p>Desde 2003 fornecendo concreto usinado de qualidade superior para obras em São Paulo. Tradição, qualidade e pontualidade em cada entrega.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/5511946853666" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Nossos Serviços</h3>
+                    <ul>
+                        <li><a href="#services">Concreto Usinado</a></li>
+                        <li><a href="#services">Bombeamento</a></li>
+                        <li><a href="#services">Locação de Equipamentos</a></li>
+                        <li><a href="#services">Controle de Qualidade</a></li>
+                        <li><a href="#services">Consultoria Técnica</a></li>
+                        <li><a href="#services">Entrega Expressa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp:</strong><br>
+                            <a href="https://wa.me/5511946853666">(11) 94685-3666</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>E-mail:</strong><br>
+                            <a href="mailto:contato@polimix.com.br">contato@polimix.com.br</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Endereço:</strong><br>
+                            São Paulo - SP<br>
+                            Atendemos toda Grande SP
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Horário:</strong><br>
+                            Segunda a Sexta: 7h às 17h<br>
+                            Sábado: 7h às 12h
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Informações Legais</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <strong>CNPJ:</strong><br>
+                            08.807.163/0001-12
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <strong>Certificações:</strong><br>
+                            ISO 9001:2015<br>
+                            ABNT NBR 7212
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>Garantia:</strong><br>
+                            Qualidade certificada<br>
+                            Laudo técnico incluso
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Polimix - CNPJ: 08.807.163/0001-12. Todos os direitos reservados.</p>
+                <p>Concreto usinado de qualidade superior | São Paulo - SP | Atuando desde 2003</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5511946853666?text=Olá! Estou no site da Polimix e gostaria de tirar algumas dúvidas sobre concreto usinado." class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Tire suas dúvidas!</div>
+    </a>
+
+    <script>
+        // Show anti-fraud modal on page load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('antifraudModal').style.display = 'block';
+            }, 3000);
+        });
+
+        // Close modal function
+        function closeModal() {
+            document.getElementById('antifraudModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('antifraudModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Close modal with X button
+        document.querySelector('.close').addEventListener('click', closeModal);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Phone mask
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+            }
+            e.target.value = value;
+        });
+
+        // Quote form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Build WhatsApp message
+            let message = `🏗️ *SOLICITAÇÃO DE ORÇAMENTO - POLIMIX*\n\n`;
+            message += `👤 *DADOS PESSOAIS:*\n`;
+            message += `• Nome: ${data.name}\n`;
+            message += `• WhatsApp: ${data.phone}\n`;
+            message += `• E-mail: ${data.email || 'Não informado'}\n`;
+            message += `• CNPJ/CPF: ${data.document || 'Não informado'}\n`;
+            message += `• Cidade da Obra: ${data.city}\n\n`;
+            
+            message += `🚛 *DETALHES DO SERVIÇO:*\n`;
+            message += `• Serviço: ${data.service.replace('-', ' ').toUpperCase()}\n`;
+            message += `• Volume: ${data.volume ? data.volume + 'm³' : 'Não informado'}\n`;
+            message += `• Resistência: ${data.resistance || 'Não informado'}\n`;
+            message += `• Data Prevista: ${data['delivery-date'] || 'Não informado'}\n`;
+            message += `• Urgência: ${data.urgency || 'Não informado'}\n`;
+            message += `• Tipo de Obra: ${data['project-type'] || 'Não informado'}\n\n`;
+            
+            message += `📝 *DESCRIÇÃO DO PROJETO:*\n${data.description}\n\n`;
+            message += `✅ *Solicito orçamento detalhado e orientação técnica.*\n`;
+            message += `📞 *Aguardo retorno em até 30 minutos.*`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/5511946853666?text=${encodedMessage}`;
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Show success message
+                alert('✅ Formulário enviado! Você será redirecionado para o WhatsApp.');
+            }, 1000);
+        });
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--white)';
+                header.style.backdropFilter = 'none';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .trust-item, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Add loading animation to service buttons
+        document.querySelectorAll('.service-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Conectando...';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+
+        // Auto-hide modal after 30 seconds if not closed
+        setTimeout(function() {
+            const modal = document.getElementById('antifraudModal');
+            if (modal.style.display === 'block') {
+                closeModal();
+            }
+        }, 30000);
+
+        // Document mask (CNPJ/CPF)
+        document.getElementById('document').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                // CPF mask
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            } else {
+                // CNPJ mask
+                value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+                value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+                value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+                value = value.replace(/(\d{4})(\d)/, '$1-$2');
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
