@@ -6,6 +6,16 @@
     <title>Polimix - Concreto Usinado, Bombeamento e Locação | São Paulo</title>
     <meta name="description" content="Polimix - Líder em concreto usinado, bombeamento de concreto e locação de equipamentos em São Paulo. Qualidade garantida há mais de 20 anos.">
     <meta name="keywords" content="concreto usinado, bombeamento concreto, locação equipamentos, construção civil, São Paulo">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17322782707"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17322782707');
+    </script>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -102,21 +112,6 @@
             font-size: 1.8rem;
             font-weight: 800;
             color: var(--primary-orange);
-            display: none;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .logo img:not([src]), .logo img[src=""] {
-            display: none;
-        }
-
-        .logo img:not([src]) + .logo-text, 
-        .logo img[src=""] + .logo-text {
-            display: block;
         }
 
         .nav-links {
@@ -153,26 +148,6 @@
 
         .nav-links a:hover::after {
             width: 100%;
-        }
-
-        .header-whatsapp {
-            background: var(--success-green);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .header-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
 
         /* Mobile Menu */
@@ -718,6 +693,78 @@
             box-shadow: var(--shadow-medium);
         }
 
+        /* Units Section */
+        .units-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .unit-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .unit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .unit-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .unit-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .unit-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .unit-btn {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 10px 20px;
+            border: 2px solid var(--primary-orange);
+            border-radius: 50px;
+            transition: all 0.3s;
+            background: transparent;
+        }
+
+        .unit-btn:hover {
+            background: var(--primary-orange);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
         /* Footer */
         footer {
             background: var(--primary-dark);
@@ -819,15 +866,6 @@
             display: flex;
             align-items: center;
             margin-bottom: 2rem;
-        }
-
-        .footer-logo img:not([src]), .footer-logo img[src=""] {
-            display: none;
-        }
-
-        .footer-logo img {
-            height: 45px;
-            margin-right: 15px;
         }
 
         .footer-logo span {
@@ -1169,9 +1207,6 @@
                 font-size: 2.2rem;
             }
         }
-
-        /* Gallery Section */
-        
     </style>
 </head>
 <body>
@@ -1224,7 +1259,6 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="assets/logo-polimix.png" alt="Polimix - Concreto Usinado" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <span class="logo-text">POLIMIX</span>
             </div>
             <ul class="nav-links">
@@ -1237,10 +1271,6 @@
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
-            <a href="https://wa.me/5511946853666?text=Olá! Vim pelo site da Polimix e gostaria de mais informações sobre concreto usinado." class="header-whatsapp">
-                <i class="fab fa-whatsapp"></i>
-                Fale Conosco
-            </a>
         </nav>
     </header>
 
@@ -1493,14 +1523,18 @@
                                 <input type="email" id="email" name="email">
                             </div>
                             <div class="form-group">
-                                <label for="document">CNPJ ou CPF</label>
-                                <input type="text" id="document" name="document" placeholder="00.000.000/0000-00 ou 000.000.000-00">
+                                <label for="city">Cidade da Obra *</label>
+                                <input type="text" id="city" name="city" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="city">Cidade da Obra *</label>
-                                <input type="text" id="city" name="city" required>
+                                <label for="cpf">CPF</label>
+                                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+                            </div>
+                            <div class="form-group">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00">
                             </div>
                         </div>
                         <div class="form-group">
@@ -1611,47 +1645,47 @@
     </section>
 
     <!-- Units Section -->
-<section class="units-section" style="padding: 100px 0; background: var(--bg-light);">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-badge">Nossas Unidades</div>
-            <h2 class="section-title">Onde Estamos</h2>
-            <p class="section-subtitle">Unidades estrategicamente localizadas para melhor atender toda a Grande São Paulo</p>
+    <section class="units-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Nossas Unidades</div>
+                <h2 class="section-title">Onde Estamos</h2>
+                <p class="section-subtitle">Unidades estrategicamente localizadas para melhor atender toda a Grande São Paulo</p>
+            </div>
+            <div class="units-grid">
+                <div class="unit-card">
+                    <div class="unit-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Unidade São Paulo</h3>
+                    <p>Central principal com laboratório e frota completa</p>
+                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade São Paulo." class="unit-btn">
+                        <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                    </a>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Unidade Guarulhos</h3>
+                    <p>Atendimento especializado para região norte</p>
+                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade Guarulhos." class="unit-btn">
+                        <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                    </a>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Unidade ABC</h3>
+                    <p>Cobertura completa do ABC Paulista</p>
+                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade ABC." class="unit-btn">
+                        <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="units-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <div class="unit-card" style="background: var(--white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light); text-align: center;">
-                <div class="unit-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--white); font-size: 1.5rem;">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Unidade São Paulo</h3>
-                <p style="color: var(--text-light); margin-bottom: 1rem;">Central principal com laboratório e frota completa</p>
-                <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade São Paulo." style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">
-                    <i class="fab fa-whatsapp"></i> Falar com esta unidade
-                </a>
-            </div>
-            <div class="unit-card" style="background: var(--white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light); text-align: center;">
-                <div class="unit-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--white); font-size: 1.5rem;">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Unidade Guarulhos</h3>
-                <p style="color: var(--text-light); margin-bottom: 1rem;">Atendimento especializado para região norte</p>
-                <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade Guarulhos." style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">
-                    <i class="fab fa-whatsapp"></i> Falar com esta unidade
-                </a>
-            </div>
-            <div class="unit-card" style="background: var(--white); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow-light); text-align: center;">
-                <div class="unit-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--white); font-size: 1.5rem;">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Unidade ABC</h3>
-                <p style="color: var(--text-light); margin-bottom: 1rem;">Cobertura completa do ABC Paulista</p>
-                <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade ABC." style="color: var(--primary-orange); text-decoration: none; font-weight: 600;">
-                    <i class="fab fa-whatsapp"></i> Falar com esta unidade
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer id="contact">
@@ -1659,7 +1693,6 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="assets/logo-polimix.png" alt="Polimix" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
                         <span>Polimix</span>
                     </div>
                     <p>Desde 2003 fornecendo concreto usinado de qualidade superior para obras em São Paulo. Tradição, qualidade e pontualidade em cada entrega.</p>
@@ -1802,6 +1835,29 @@
             e.target.value = value;
         });
 
+        // CPF mask
+        document.getElementById('cpf').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            }
+            e.target.value = value;
+        });
+
+        // CNPJ mask
+        document.getElementById('cnpj').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 14) {
+                value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+                value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+                value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+                value = value.replace(/(\d{4})(\d)/, '$1-$2');
+            }
+            e.target.value = value;
+        });
+
         // Quote form submission
         document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1815,7 +1871,8 @@
             message += `• Nome: ${data.name}\n`;
             message += `• WhatsApp: ${data.phone}\n`;
             message += `• E-mail: ${data.email || 'Não informado'}\n`;
-            message += `• CNPJ/CPF: ${data.document || 'Não informado'}\n`;
+            message += `• CPF: ${data.cpf || 'Não informado'}\n`;
+            message += `• CNPJ: ${data.cnpj || 'Não informado'}\n`;
             message += `• Cidade da Obra: ${data.city}\n\n`;
             
             message += `🚛 *DETALHES DO SERVIÇO:*\n`;
@@ -1913,24 +1970,7 @@
                 closeModal();
             }
         }, 30000);
-
-        // Document mask (CNPJ/CPF)
-        document.getElementById('document').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length <= 11) {
-                // CPF mask
-                value = value.replace(/(\d{3})(\d)/, '$1.$2');
-                value = value.replace(/(\d{3})(\d)/, '$1.$2');
-                value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-            } else {
-                // CNPJ mask
-                value = value.replace(/^(\d{2})(\d)/, '$1.$2');
-                value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
-                value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
-                value = value.replace(/(\d{4})(\d)/, '$1-$2');
-            }
-            e.target.value = value;
-        });
     </script>
 </body>
 </html>
+
