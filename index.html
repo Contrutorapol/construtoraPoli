@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polimix - Concreto Usinado, Bombeamento e Locação | São Paulo</title>
-    <meta name="description" content="Polimix - Líder em concreto usinado, bombeamento de concreto e locação de equipamentos em São Paulo. Qualidade garantida há mais de 20 anos.">
-    <meta name="keywords" content="concreto usinado, bombeamento concreto, locação equipamentos, construção civil, São Paulo">
+    <title>Polimix - Concreto Usinado, Bombeamento e Locação | Brasil</title>
+    <meta name="description" content="Polimix - Líder em concreto usinado, bombeamento de concreto e locação de equipamentos. Atendimento em todo o Brasil. Qualidade garantida há mais de 20 anos.">
+    <meta name="keywords" content="concreto usinado, bombeamento concreto, locação equipamentos, construção civil, Brasil, São Paulo">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17322782707"></script>
@@ -34,6 +34,7 @@
             --shadow-heavy: 0 20px 40px rgba(0,0,0,0.15);
             --gradient-primary: linear-gradient(135deg, #FF6B35, #FF8A65);
             --gradient-dark: linear-gradient(135deg, #2C3E50, #34495E);
+            --gradient-hero: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(255, 107, 53, 0.9));
         }
 
         * {
@@ -160,19 +161,22 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Enhanced Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(255, 107, 53, 0.9)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80');
+            background: 
+                var(--gradient-hero),
+                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: var(--white);
             margin-top: 120px;
             position: relative;
+            overflow: hidden;
         }
 
         .hero::before {
@@ -182,81 +186,213 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8), rgba(255, 107, 53, 0.8));
+            background: var(--gradient-hero);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 4rem 0;
         }
 
         .hero-badge {
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.15));
             color: var(--white);
-            padding: 8px 20px;
+            padding: 12px 30px;
             border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
             display: inline-block;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-badge i {
+            margin-right: 8px;
+            color: #FFD700;
+        }
+
+        .hero-brand {
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .brand-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FF6B35, #FF8A65);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .brand-icon::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 8px;
+        }
+
+        .brand-text {
+            text-align: left;
+        }
+
+        .brand-name {
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFE4B5 50%, #FFFFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            margin-bottom: 0.5rem;
+        }
+
+        .brand-subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #FFD700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-content h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            line-height: 1.1;
-        }
-
-        .hero-content .subtitle {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            font-weight: 300;
-            animation: fadeInUp 1s ease 0.3s both;
-            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.4s both;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+            color: #FFE4B5;
         }
 
-        .hero-content .description {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            max-width: 700px;
+        .hero-location {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            animation: fadeInUp 1s ease 0.6s both;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .hero-location i {
+            font-size: 1.8rem;
+            animation: pulse 2s infinite;
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            margin-bottom: 3.5rem;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            animation: fadeInUp 1s ease 0.6s both;
+            animation: fadeInUp 1s ease 0.8s both;
             opacity: 0.9;
-            line-height: 1.6;
+            line-height: 1.7;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            animation: fadeInUp 1s ease 1s both;
+        }
+
+        .hero-stat {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .hero-stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #FFD700;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.9s both;
+            animation: fadeInUp 1s ease 1.2s both;
+            margin-top: 3rem;
         }
 
         .btn {
-            padding: 18px 35px;
+            padding: 20px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             border: none;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .btn::before {
@@ -266,7 +402,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.5s;
         }
 
@@ -275,26 +411,38 @@
         }
 
         .btn-primary {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #FF6B35, #FF8A65);
             color: var(--white);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
         }
 
         .btn-secondary {
-            background: var(--success-green);
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: var(--white);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
         }
 
         .btn-outline {
-            background: transparent;
+            background: rgba(255,255,255,0.1);
             color: var(--white);
-            border: 2px solid var(--white);
+            border: 3px solid rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
         }
 
-        .btn:hover {
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: var(--white);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-heavy);
         }
 
         /* Trust Indicators */
@@ -858,10 +1006,6 @@
             color: rgba(255,255,255,0.6);
         }
 
-        .footer-bottom p {
-            margin-bottom: 0.5rem;
-        }
-
         .footer-logo {
             display: flex;
             align-items: center;
@@ -1067,13 +1211,24 @@
 
         @keyframes pulse {
             0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
             }
             70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
             }
             100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+            }
+        }
+
+        @keyframes heroGlow {
+            0% {
+                transform: rotate(0deg) scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: rotate(360deg) scale(1.1);
+                opacity: 0.1;
             }
         }
 
@@ -1090,8 +1245,25 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
+            .brand-name {
+                font-size: 4.5rem;
+            }
+            
+            .brand-subtitle {
+                font-size: 1.5rem;
+            }
+            
             .hero-content h1 {
-                font-size: 3.5rem;
+                font-size: 2.2rem;
+            }
+            
+            .hero-location {
+                font-size: 1.4rem;
+            }
+            
+            .brand-icon {
+                width: 70px;
+                height: 70px;
             }
             
             .section-title {
@@ -1102,6 +1274,10 @@
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1120,19 +1296,41 @@
 
             .hero {
                 margin-top: 80px;
-                height: 90vh;
+                min-height: 90vh;
+            }
+
+            .brand-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .brand-text {
+                text-align: center;
+            }
+
+            .brand-name {
+                font-size: 3.5rem;
+            }
+
+            .brand-subtitle {
+                font-size: 1.3rem;
             }
 
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: 1.8rem;
             }
 
-            .hero-content .subtitle {
-                font-size: 1.4rem;
+            .hero-location {
+                font-size: 1.2rem;
             }
 
-            .hero-content .description {
-                font-size: 1.1rem;
+            .hero-description {
+                font-size: 1.2rem;
+            }
+
+            .brand-icon {
+                width: 60px;
+                height: 60px;
             }
 
             .section-title {
@@ -1184,6 +1382,11 @@
                 bottom: 20px;
                 right: 20px;
             }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1191,8 +1394,22 @@
                 grid-template-columns: 1fr;
             }
 
+            .brand-name {
+                font-size: 2.8rem;
+            }
+
+            .brand-subtitle {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+            }
+
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 1.6rem;
+            }
+
+            .brand-icon {
+                width: 50px;
+                height: 50px;
             }
 
             .section-title {
@@ -1274,24 +1491,64 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Enhanced Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-award"></i> Desde 2003 construindo com qualidade
+                    <i class="fas fa-award"></i> Desde 2003 construindo com excelência
                 </div>
-                <h1>Polimix Concreto</h1>
-                <p class="subtitle">Concreto Usinado de Qualidade Superior</p>
-                <p class="description">Líder em concreto usinado, bombeamento e locação de equipamentos em São Paulo. Atendemos obras residenciais, comerciais e industriais com a máxima qualidade e pontualidade.</p>
+                
+                <div class="hero-brand">
+                    <div class="brand-container">
+                        <div class="brand-icon"></div>
+                        <div class="brand-text">
+                            <div class="brand-name">POLIMIX</div>
+                            <div class="brand-subtitle">CONCRETO</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h1>Líder Nacional em Concreto Usinado</h1>
+                
+                <div class="hero-location">
+                    <i class="fas fa-map-marked-alt"></i>
+                    ATENDIMENTO EM TODO O BRASIL
+                </div>
+                
+                <p class="hero-description">
+                    Especialistas em concreto usinado, bombeamento e locação de equipamentos. 
+                    Atendemos obras residenciais, comerciais e industriais em todo território brasileiro 
+                    com a máxima qualidade, pontualidade e excelência técnica.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">21+</span>
+                        <span class="hero-stat-label">Anos de Experiência</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">27</span>
+                        <span class="hero-stat-label">Estados Atendidos</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">10.000+</span>
+                        <span class="hero-stat-label">m³ Entregues/Mês</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">100%</span>
+                        <span class="hero-stat-label">Qualidade Garantida</span>
+                    </div>
+                </div>
+
                 <div class="cta-buttons">
                     <a href="#quote" class="btn btn-primary">
                         <i class="fas fa-calculator"></i>
-                        Solicitar Orçamento
+                        Solicitar Orçamento Gratuito
                     </a>
-                    <a href="https://wa.me/5511946853666?text=Olá! Preciso de concreto usinado para minha obra. Podem me ajudar?" class="btn btn-secondary">
+                    <a href="https://wa.me/5511946853666?text=Olá! Preciso de concreto usinado para minha obra no Brasil. Podem me ajudar?" class="btn btn-secondary">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp Direto
+                        WhatsApp Nacional
                     </a>
                     <a href="#services" class="btn btn-outline">
                         <i class="fas fa-truck-moving"></i>
@@ -1344,7 +1601,7 @@
             <div class="section-header">
                 <div class="section-badge">Nossos Serviços</div>
                 <h2 class="section-title">Soluções Completas em Concreto</h2>
-                <p class="section-subtitle">Oferecemos concreto usinado de alta qualidade, bombeamento eficiente e locação de equipamentos para todos os tipos de obra</p>
+                <p class="section-subtitle">Oferecemos concreto usinado de alta qualidade, bombeamento eficiente e locação de equipamentos para todos os tipos de obra em todo o Brasil</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -1354,7 +1611,7 @@
                         </div>
                         <h3>Concreto Usinado</h3>
                     </div>
-                    <p>Concreto de alta qualidade produzido em nossa central, com controle rigoroso de qualidade e entrega pontual em toda São Paulo.</p>
+                    <p>Concreto de alta qualidade produzido em nossa central, com controle rigoroso de qualidade e entrega pontual em todo o Brasil.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Controle de qualidade rigoroso</li>
                         <li><i class="fas fa-check"></i> Diversos tipos de resistência</li>
@@ -1615,9 +1872,9 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Sobre a Polimix</h2>
-                    <p>Desde 2003 no mercado, a Polimix é referência em concreto usinado em São Paulo. Nossa empresa nasceu com o compromisso de fornecer concreto de alta qualidade, pontualidade na entrega e excelência no atendimento.</p>
+                    <p>Desde 2003 no mercado, a Polimix é referência em concreto usinado no Brasil. Nossa empresa nasceu com o compromisso de fornecer concreto de alta qualidade, pontualidade na entrega e excelência no atendimento em todo território nacional.</p>
                     <p>Contamos com uma central de concreto moderna, laboratório próprio para controle de qualidade, frota de caminhões betoneira e equipamentos de bombeamento de última geração. Nossa equipe técnica é formada por engenheiros e técnicos especializados.</p>
-                    <p>Atendemos obras residenciais, comerciais e industriais em toda a Grande São Paulo, sempre com foco na satisfação do cliente e na qualidade do produto entregue.</p>
+                    <p>Atendemos obras residenciais, comerciais e industriais em todo o Brasil, sempre com foco na satisfação do cliente e na qualidade do produto entregue.</p>
                     <div class="about-stats">
                         <div class="stat-item">
                             <span class="stat-number">21+</span>
@@ -1648,39 +1905,39 @@
     <section class="units-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">Nossas Unidades</div>
-                <h2 class="section-title">Onde Estamos</h2>
-                <p class="section-subtitle">Unidades estrategicamente localizadas para melhor atender toda a Grande São Paulo</p>
+                <div class="section-badge">Nossa Cobertura</div>
+                <h2 class="section-title">Atendimento Nacional</h2>
+                <p class="section-subtitle">Presença estratégica em todo o Brasil para melhor atender suas necessidades</p>
             </div>
             <div class="units-grid">
                 <div class="unit-card">
                     <div class="unit-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>Unidade São Paulo</h3>
-                    <p>Central principal com laboratório e frota completa</p>
-                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade São Paulo." class="unit-btn">
-                        <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                    <h3>Região Sudeste</h3>
+                    <p>Cobertura completa em SP, RJ, MG e ES com logística otimizada</p>
+                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre atendimento na região Sudeste." class="unit-btn">
+                        <i class="fab fa-whatsapp"></i> Falar com esta região
                     </a>
                 </div>
                 <div class="unit-card">
                     <div class="unit-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>Unidade Guarulhos</h3>
-                    <p>Atendimento especializado para região norte</p>
-                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade Guarulhos." class="unit-btn">
-                        <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                    <h3>Região Sul</h3>
+                    <p>Atendimento especializado para RS, SC e PR</p>
+                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre atendimento na região Sul." class="unit-btn">
+                        <i class="fab fa-whatsapp"></i> Falar com esta região
                     </a>
                 </div>
                 <div class="unit-card">
                     <div class="unit-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>Unidade ABC</h3>
-                    <p>Cobertura completa do ABC Paulista</p>
-                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre a unidade ABC." class="unit-btn">
-                        <i class="fab fa-whatsapp"></i> Falar com esta unidade
+                    <h3>Demais Regiões</h3>
+                    <p>Atendimento nacional com parcerias estratégicas</p>
+                    <a href="https://wa.me/5511946853666?text=Olá! Gostaria de informações sobre atendimento nacional." class="unit-btn">
+                        <i class="fab fa-whatsapp"></i> Consultar disponibilidade
                     </a>
                 </div>
             </div>
@@ -1695,7 +1952,7 @@
                     <div class="footer-logo">
                         <span>Polimix</span>
                     </div>
-                    <p>Desde 2003 fornecendo concreto usinado de qualidade superior para obras em São Paulo. Tradição, qualidade e pontualidade em cada entrega.</p>
+                    <p>Desde 2003 fornecendo concreto usinado de qualidade superior para obras em todo o Brasil. Tradição, qualidade e pontualidade em cada entrega.</p>
                     <div class="social-links">
                         <a href="https://wa.me/5511946853666" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -1733,9 +1990,9 @@
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <strong>Endereço:</strong><br>
+                            <strong>Sede:</strong><br>
                             São Paulo - SP<br>
-                            Atendemos toda Grande SP
+                            Atendemos todo o Brasil
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1776,7 +2033,6 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 Polimix - CNPJ: 08.807.163/0001-12. Todos os direitos reservados.</p>
-                <p>Concreto usinado de qualidade superior | São Paulo - SP | Atuando desde 2003</p>
             </div>
         </div>
     </footer>
@@ -1866,25 +2122,47 @@
             const data = Object.fromEntries(formData);
             
             // Build WhatsApp message
-            let message = `🏗️ *SOLICITAÇÃO DE ORÇAMENTO - POLIMIX*\n\n`;
-            message += `👤 *DADOS PESSOAIS:*\n`;
-            message += `• Nome: ${data.name}\n`;
-            message += `• WhatsApp: ${data.phone}\n`;
-            message += `• E-mail: ${data.email || 'Não informado'}\n`;
-            message += `• CPF: ${data.cpf || 'Não informado'}\n`;
-            message += `• CNPJ: ${data.cnpj || 'Não informado'}\n`;
-            message += `• Cidade da Obra: ${data.city}\n\n`;
+            let message = `🏗️ *SOLICITAÇÃO DE ORÇAMENTO - POLIMIX*
+
+`;
+            message += `👤 *DADOS PESSOAIS:*
+`;
+            message += `• Nome: ${data.name}
+`;
+            message += `• WhatsApp: ${data.phone}
+`;
+            message += `• E-mail: ${data.email || 'Não informado'}
+`;
+            message += `• CPF: ${data.cpf || 'Não informado'}
+`;
+            message += `• CNPJ: ${data.cnpj || 'Não informado'}
+`;
+            message += `• Cidade da Obra: ${data.city}
+
+`;
             
-            message += `🚛 *DETALHES DO SERVIÇO:*\n`;
-            message += `• Serviço: ${data.service.replace('-', ' ').toUpperCase()}\n`;
-            message += `• Volume: ${data.volume ? data.volume + 'm³' : 'Não informado'}\n`;
-            message += `• Resistência: ${data.resistance || 'Não informado'}\n`;
-            message += `• Data Prevista: ${data['delivery-date'] || 'Não informado'}\n`;
-            message += `• Urgência: ${data.urgency || 'Não informado'}\n`;
-            message += `• Tipo de Obra: ${data['project-type'] || 'Não informado'}\n\n`;
+            message += `🚛 *DETALHES DO SERVIÇO:*
+`;
+            message += `• Serviço: ${data.service.replace('-', ' ').toUpperCase()}
+`;
+            message += `• Volume: ${data.volume ? data.volume + 'm³' : 'Não informado'}
+`;
+            message += `• Resistência: ${data.resistance || 'Não informado'}
+`;
+            message += `• Data Prevista: ${data['delivery-date'] || 'Não informado'}
+`;
+            message += `• Urgência: ${data.urgency || 'Não informado'}
+`;
+            message += `• Tipo de Obra: ${data['project-type'] || 'Não informado'}
+
+`;
             
-            message += `📝 *DESCRIÇÃO DO PROJETO:*\n${data.description}\n\n`;
-            message += `✅ *Solicito orçamento detalhado e orientação técnica.*\n`;
+            message += `📝 *DESCRIÇÃO DO PROJETO:*
+${data.description}
+
+`;
+            message += `✅ *Solicito orçamento detalhado e orientação técnica.*
+`;
             message += `📞 *Aguardo retorno em até 30 minutos.*`;
             
             const encodedMessage = encodeURIComponent(message);
@@ -1939,7 +2217,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.service-card, .trust-item, .stat-item').forEach(el => {
+        document.querySelectorAll('.service-card, .trust-item, .stat-item, .hero-stat').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
@@ -1973,4 +2251,3 @@
     </script>
 </body>
 </html>
-
